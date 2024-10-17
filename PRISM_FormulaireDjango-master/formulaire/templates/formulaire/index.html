@@ -1,0 +1,24 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="fr">
+  <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static '/ressources/css/style.css' %}">
+    <title>GeePs</title>
+  </head>
+  <body>
+    <h1>Visites du GeePs</h1>
+    <h2>Informations visiteur :</h2>
+
+    <form action="{% url "contact" %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" />
+    </form>
+
+    <h2>Protection des informations nominatives</h2>
+    </br><p>Les informations recueillies font l'objet d'un traitement informatique destiné à garder une trace des visites au GeePs. Les desinataires des données sont les responsables de la PPST au sein du CNRS. </p></br>
+    <p>Conformément à la loi "informatique et libertés" du 6 janvier 1978 modifiée en 2004, vous bénéficiez d'un droit d'accès et de rectification aux informations qui vous concernent, que vous pouvez exercer en vous adressant à la direction du GeePs.</p>
+
+  </body>
+</html>
